@@ -15,6 +15,8 @@ export default function AdminLogin({ dict }: { dict: any }) {
       const res = await loginAction(formData);
       if (!res.success) {
         setError("Hibás jelszó!");
+      } else {
+        window.location.reload();
       }
     });
   };

@@ -42,6 +42,10 @@ export default async function Admin({ params }: { params: Promise<{ lang: string
             "use server";
             const cookieStore = await cookies();
             cookieStore.delete("admin_session");
+            const { revalidatePath } = await import("next/cache");
+            const { redirect } = await import("next/navigation");
+            revalidatePath(`/${locale}/admin`);
+            redirect(`/${locale}/admin`);
           }}>
             <button type="submit" className="px-4 py-2 rounded-lg bg-red-900/50 hover:bg-red-800 text-red-200 text-sm font-semibold transition-colors">
               {dict.admin.logout}
