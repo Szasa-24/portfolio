@@ -1,17 +1,16 @@
-import { sql } from "drizzle-orm";
-import { text, integer, sqliteTable } from "drizzle-orm/sqlite-core";
+import { pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
 
-export const messages = sqliteTable("messages", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const messages = pgTable("messages", {
+  id: serial("id").primaryKey(),
   name: text("name").notNull(),
   email: text("email").notNull(),
   message: text("message").notNull(),
-  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`).notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-export const guestbook = sqliteTable("guestbook", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const guestbook = pgTable("guestbook", {
+  id: serial("id").primaryKey(),
   name: text("name").notNull(),
   comment: text("comment").notNull(),
-  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`).notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
