@@ -7,12 +7,11 @@ import { Locale, i18n } from "@/i18n/config";
 import { useState, useTransition } from "react";
 import { Globe, Menu, X } from "lucide-react";
 
-export default function Navigation({ lang, dict }: { lang: Locale, dict: any }) {
+export default function Navigation({ lang, dict }: { lang: string, dict: Record<string, string> }) {
   const pathname = usePathname();
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const switchLanguage = (newLocale: string) => {
     const currentPath = pathname.replace(`/${lang}`, '');
     const newPath = `/${newLocale}${currentPath === '' ? '' : currentPath}`;

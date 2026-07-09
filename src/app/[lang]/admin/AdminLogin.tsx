@@ -4,7 +4,7 @@ import { useTransition, useState } from "react";
 import { loginAction } from "./actions";
 import { Loader2 } from "lucide-react";
 
-export default function AdminLogin({ dict }: { dict: any }) {
+export default function AdminLogin({ dict }: { dict: Record<string, string> }) {
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState("");
 

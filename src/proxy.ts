@@ -10,7 +10,7 @@ function getLocale(request: NextRequest): string | undefined {
   
   for (const lang of languages) {
     const baseLang = lang.split('-')[0];
-    if (i18n.locales.includes(baseLang as any)) {
+    if (i18n.locales.includes(baseLang as "hu" | "en" | "uk")) {
       return baseLang;
     }
   }

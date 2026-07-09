@@ -7,7 +7,7 @@ import { desc, eq } from "drizzle-orm";
 import { cookies } from "next/headers";
 import { sendNotificationEmail } from "@/lib/mail";
 
-export async function submitContactMessage(prevState: any, formData: FormData) {
+export async function submitContactMessage(prevState: unknown, formData: FormData) {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
   const message = formData.get("message") as string;
@@ -35,7 +35,7 @@ export async function submitContactMessage(prevState: any, formData: FormData) {
   }
 }
 
-export async function submitGuestbookComment(prevState: any, formData: FormData) {
+export async function submitGuestbookComment(prevState: unknown, formData: FormData) {
   const name = formData.get("name") as string;
   const comment = formData.get("comment") as string;
 
@@ -71,34 +71,32 @@ export async function getGuestbookComments() {
   }
 }
 
-export async function deleteMessage(id: number) {
+export async function deleteMessage(id: number): Promise<void> {
   const cookieStore = await cookies();
   if (cookieStore.get("admin_session")?.value !== "authenticated") {
-    return { success: false, error: "Nincs jogosultságod a törléshez!" };
+    throw new Error("Nincs jogosultságod a törléshez!");
   }
   
   try {
     await db.delete(messages).where(eq(messages.id, id));
     revalidatePath("/", "layout");
-    return { success: true };
   } catch (error) {
     console.error("Hiba törléskor:", error);
-    return { success: false, error: "Nem sikerült törölni az üzenetet." };
+    throw new Error("Nem sikerült törölni az üzenetet.");
   }
 }
 
-export async function deleteGuestbookComment(id: number) {
+export async function deleteGuestbookComment(id: number): Promise<void> {
   const cookieStore = await cookies();
   if (cookieStore.get("admin_session")?.value !== "authenticated") {
-    return { success: false, error: "Nincs jogosultságod a törléshez!" };
+    throw new Error("Nincs jogosultságod a törléshez!");
   }
 
   try {
     await db.delete(guestbook).where(eq(guestbook.id, id));
     revalidatePath("/", "layout");
-    return { success: true };
   } catch (error) {
     console.error("Hiba törléskor:", error);
-    return { success: false, error: "Nem sikerült törölni a bejegyzést." };
+    throw new Error("Nem sikerült törölni a bejegyzést.");
   }
 }

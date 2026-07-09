@@ -10,7 +10,7 @@ const initialState = {
   message: "",
 };
 
-export default function ContactForm({ dict }: { dict: any }) {
+export default function ContactForm({ dict }: { dict: Record<string, string> }) {
   const [state, formAction, isPending] = useActionState(submitContactMessage, initialState);
 
   return (

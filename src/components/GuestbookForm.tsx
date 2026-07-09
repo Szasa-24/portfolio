@@ -10,7 +10,7 @@ const initialState = {
   message: "",
 };
 
-export default function GuestbookForm({ dict }: { dict: any }) {
+export default function GuestbookForm({ dict }: { dict: Record<string, string> }) {
   const [state, formAction, isPending] = useActionState(submitGuestbookComment, initialState);
   const formRef = useRef<HTMLFormElement>(null);
 
