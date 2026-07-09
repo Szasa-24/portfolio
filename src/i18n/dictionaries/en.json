@@ -1,0 +1,71 @@
+{
+  "navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "guestbook": "Guestbook",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Open to remote work and projects",
+    "greeting": "Hi, I'm {name}",
+    "title": "Full-Stack Web Developer & Business Informatics Student",
+    "description": "I specialize in building high-visual-quality, scalable, and secure web applications. My core stack includes Next.js 15, TypeScript, PostgreSQL, and the Firebase ecosystem. My goal is to create perfect user experiences across all platforms.",
+    "ctaProjects": "View Projects",
+    "ctaContact": "Get in Touch"
+  },
+  "about": {
+    "title": "About Me & Skills",
+    "subtitle": "Discover my professional background and technological expertise.",
+    "studiesTitle": "Education",
+    "skillsTitle": "Technical Skills",
+    "university1": "University of Miskolc",
+    "major1": "Business Informatics B.Sc.",
+    "desc1": "Integration of engineering and business processes, data modeling, ERP system logic, business analytics, and database management.",
+    "university2": "Ferenc Rákóczi II Transcarpathian Hungarian College",
+    "major2": "Computer Science / Software Engineering B.Sc.",
+    "desc2": "Algorithms and data structures, object-oriented programming (C++), network architectures, operating systems, and mathematical foundations.",
+    "now": "Present"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Practical references that I built entirely from scratch.",
+    "viewSite": "View Live Site",
+    "viewSource": "GitHub Source",
+    "fullStack": "Full-Stack Webapp",
+    "agency": "Agency Website",
+    "franklinDesc": "Premium client gallery and photographer admin interface for school events. Cloud bulk upload, unique code client login, and server-side ZIP compression bulk download processes.",
+    "hatalyxDesc": "Web development and design agency landing page with dark mode design, interactive scrolling animations, and built-in multilingual support."
+  },
+  "guestbook": {
+    "title": "Guestbook",
+    "subtitle": "Leave a message or greeting on my wall! Comments are saved directly to the database.",
+    "formName": "Your Name",
+    "formComment": "Your Comment",
+    "formSubmit": "Submit",
+    "formSending": "Sending...",
+    "previousComments": "Previous Comments",
+    "noComments": "No comments yet. Be the first!"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Looking for a joint project or offering a job opportunity? Write to me directly!",
+    "emailTitle": "E-mail",
+    "phoneTitle": "Phone",
+    "formName": "Your Name",
+    "formEmail": "Your E-mail",
+    "formMessage": "Your Message",
+    "formSubmit": "Send Message",
+    "formSending": "Sending...",
+    "footerRights": "All rights reserved."
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "subtitle": "Manage received messages and guestbook entries.",
+    "messages": "Inbox Messages",
+    "login": "Login to Admin Dashboard",
+    "password": "Password",
+    "submit": "Login",
+    "logout": "Logout"
+  }
+}

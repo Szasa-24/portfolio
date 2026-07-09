@@ -1,0 +1,71 @@
+{
+  "navigation": {
+    "home": "Kezdőlap",
+    "projects": "Projektek",
+    "about": "Rólam",
+    "guestbook": "Vendégkönyv",
+    "contact": "Kapcsolat"
+  },
+  "hero": {
+    "badge": "Nyitott vagyok távmunkákra és projektekre",
+    "greeting": "Szia, {name} vagyok",
+    "title": "Full-Stack Webfejlesztő & Gazdaságinformatikus hallgató",
+    "description": "Magas vizuális minőségű, skálázható és biztonságos webalkalmazások fejlesztésére specializálódtam. Fő stackem a Next.js 15, TypeScript, PostgreSQL és a Firebase ökoszisztéma. Célom a tökéletes felhasználói élmény megteremtése minden platformon.",
+    "ctaProjects": "Projektek megtekintése",
+    "ctaContact": "Kapcsolatfelvétel"
+  },
+  "about": {
+    "title": "Rólam & Készségeim",
+    "subtitle": "Ismerd meg a szakmai hátteremet és a technológiai tudásomat.",
+    "studiesTitle": "Tanulmányok",
+    "skillsTitle": "Technológiai Készségek",
+    "university1": "Miskolci Egyetem",
+    "major1": "Gazdaságinformatikus B.Sc.",
+    "desc1": "Műszaki és gazdasági folyamatok integrációja, adatmodellezés, vállalatirányítási rendszerek (ERP) logikája, üzleti analitika és adatbázis-kezelés.",
+    "university2": "II. Rákóczi Ferenc Kárpátaljai Magyar Egyetem",
+    "major2": "Informatika / Szoftverfejlesztés B.Sc.",
+    "desc2": "Algoritmusok és adatszerkezetek, objektumorientált programozás (C++), hálózati architektúrák, operációs rendszerek és matematikai alapok.",
+    "now": "Jelenleg is"
+  },
+  "projects": {
+    "title": "Kiemelt Projektjeim",
+    "subtitle": "Gyakorlati referenciák, amiket teljesen önállóan építettem fel az alapoktól.",
+    "viewSite": "Működő weboldal",
+    "viewSource": "GitHub forráskód",
+    "fullStack": "Full-Stack Webapp",
+    "agency": "Agency Website",
+    "franklinDesc": "Prémium ügyfélgaléria és fotós adminisztrációs felület iskolai rendezvények lebonyolítására. Bulk feltöltés a felhőbe, egyedi kódos belépés az ügyfeleknek, és szerveroldali ZIP tömörítéses bulk letöltési folyamat.",
+    "hatalyxDesc": "Webfejlesztő és dizájn ügynökségi bemutató oldal sötét módos dizájnnal, interaktív görgetési animációkkal és beépített többnyelvűségi támogatással."
+  },
+  "guestbook": {
+    "title": "Vendégkönyv",
+    "subtitle": "Írj egy bejegyzést, köszöntést a falamra! A hozzászólások közvetlenül az adatbázisba mentődnek el.",
+    "formName": "Neved",
+    "formComment": "Hozzászólásod",
+    "formSubmit": "Beküldés",
+    "formSending": "Küldés...",
+    "previousComments": "Korábbi bejegyzések",
+    "noComments": "Még nincs bejegyzés. Legyél te az első!"
+  },
+  "contact": {
+    "title": "Kapcsolatfelvétel",
+    "subtitle": "Szeretnél egy közös projektet, vagy álláslehetőséget kínálnál? Írj nekem közvetlenül!",
+    "emailTitle": "E-mail",
+    "phoneTitle": "Telefon",
+    "formName": "Neved",
+    "formEmail": "E-mail címed",
+    "formMessage": "Üzeneted",
+    "formSubmit": "Üzenet Küldése",
+    "formSending": "Küldés folyamatban...",
+    "footerRights": "Minden jog fenntartva."
+  },
+  "admin": {
+    "title": "Admin Vezérlőpult",
+    "subtitle": "Beérkezett üzenetek és vendégkönyv bejegyzések kezelése.",
+    "messages": "Beérkezett Üzenetek",
+    "login": "Bejelentkezés az Admin felületre",
+    "password": "Jelszó",
+    "submit": "Belépés",
+    "logout": "Kijelentkezés"
+  }
+}
