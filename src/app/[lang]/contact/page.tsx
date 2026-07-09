@@ -17,7 +17,7 @@ export default async function Contact({ params }: { params: Promise<{ lang: stri
           <p className="text-gray-400">{dict.contact.subtitle}</p>
         </div>
 
-        <div className="grid md:grid-cols-12 gap-8 items-start">
+        <div className="grid md:grid-cols-12 gap-6 md:gap-8 items-start">
           <div className="md:col-span-5 space-y-4">
             <div className="p-6 rounded-2xl bg-gray-900/40 border border-gray-800 flex items-center gap-4 hover:border-purple-500/30 transition-colors">
               <div className="p-3 rounded-xl bg-purple-950/40 text-purple-400">
@@ -44,7 +44,7 @@ export default async function Contact({ params }: { params: Promise<{ lang: stri
             </div>
           </div>
 
-          <div className="md:col-span-7 glass-card rounded-2xl p-8 shadow-xl shadow-purple-900/10">
+          <div className="md:col-span-7 glass-card rounded-2xl p-6 md:p-8 shadow-xl shadow-purple-900/10">
             <ContactForm dict={dict.contact} />
           </div>
         </div>

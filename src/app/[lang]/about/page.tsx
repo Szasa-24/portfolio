@@ -33,8 +33,8 @@ export default async function About({ params }: { params: Promise<{ lang: string
             <p className="text-gray-400">{dict.about.subtitle}</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="glass-card rounded-2xl p-8 space-y-6 hover:-translate-y-2 transition-all duration-300 border border-purple-500/10 hover:border-purple-500/30 shadow-xl shadow-black/50">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            <div className="glass-card rounded-2xl p-6 md:p-8 space-y-6 hover:-translate-y-2 transition-all duration-300 border border-purple-500/10 hover:border-purple-500/30 shadow-xl shadow-black/50">
               <div className="flex items-center justify-between">
                 <div className="p-4 rounded-xl bg-purple-950/40 text-purple-400">
                   <BookOpen className="w-8 h-8" />
@@ -52,7 +52,7 @@ export default async function About({ params }: { params: Promise<{ lang: string
               </p>
             </div>
 
-            <div className="glass-card rounded-2xl p-8 space-y-6 hover:-translate-y-2 transition-all duration-300 border border-purple-500/10 hover:border-purple-500/30 shadow-xl shadow-black/50">
+            <div className="glass-card rounded-2xl p-6 md:p-8 space-y-6 hover:-translate-y-2 transition-all duration-300 border border-purple-500/10 hover:border-purple-500/30 shadow-xl shadow-black/50">
               <div className="flex items-center justify-between">
                 <div className="p-4 rounded-xl bg-purple-950/40 text-purple-400">
                   <BookOpen className="w-8 h-8" />
@@ -78,7 +78,7 @@ export default async function About({ params }: { params: Promise<{ lang: string
             <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">{dict.about.skillsTitle}</h2>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {skills.map((skill) => {
               const Icon = skill.icon;
               return (

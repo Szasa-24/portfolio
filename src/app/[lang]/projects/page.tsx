@@ -16,8 +16,8 @@ export default async function Projects({ params }: { params: Promise<{ lang: str
           <p className="text-gray-400">{dict.projects.subtitle}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="glass-card rounded-2xl p-8 flex flex-col justify-between h-full group hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-900/20">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          <div className="glass-card rounded-2xl p-6 md:p-8 flex flex-col justify-between h-full group hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-900/20">
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <span className="px-4 py-1.5 rounded-md bg-purple-950/40 border border-purple-500/30 text-xs font-bold text-purple-300 uppercase tracking-wider">
@@ -54,7 +54,7 @@ export default async function Projects({ params }: { params: Promise<{ lang: str
             </div>
           </div>
 
-          <div className="glass-card rounded-2xl p-8 flex flex-col justify-between h-full group hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-900/20">
+          <div className="glass-card rounded-2xl p-6 md:p-8 flex flex-col justify-between h-full group hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-900/20">
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <span className="px-4 py-1.5 rounded-md bg-purple-950/40 border border-purple-500/30 text-xs font-bold text-purple-300 uppercase tracking-wider">

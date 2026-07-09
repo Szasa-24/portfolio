@@ -20,7 +20,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               {dict.hero.badge}
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
               {dict.hero.greeting.replace('{name}', '')} 
               <span className="block mt-2 bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
                 Hatalovics Sándor
@@ -45,7 +45,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             </div>
           </div>
           
-          <div className="md:col-span-5 order-1 md:order-2 flex justify-center perspective-[1000px]">
+          <div className="md:col-span-5 order-1 md:order-2 flex justify-center perspective-[1000px] mb-8 md:mb-0">
             <TiltImage src="/profile.jpg" alt="Hatalovics Sándor" />
           </div>
         </div>

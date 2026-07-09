@@ -40,7 +40,7 @@ export default function TiltImage({ src, alt }: { src: string; alt: string }) {
         rotateY,
         transformStyle: "preserve-3d",
       }}
-      className="relative w-64 h-80 md:w-[350px] md:h-[450px] rounded-2xl overflow-hidden border-2 border-purple-500/30 shadow-2xl shadow-purple-500/20 mx-auto"
+      className="relative w-[220px] h-[280px] sm:w-64 sm:h-80 md:w-[350px] md:h-[450px] rounded-2xl overflow-hidden border-2 border-purple-500/30 shadow-2xl shadow-purple-500/20 mx-auto"
     >
       <div
         style={{ transform: "translateZ(50px)" }}
