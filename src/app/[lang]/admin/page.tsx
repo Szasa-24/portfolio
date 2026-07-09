@@ -2,10 +2,12 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import { Locale } from "@/i18n/config";
 import PageTransition from "@/components/PageTransition";
 import { db } from "@/db/db";
-import { messages } from "@/db/schema";
+import { messages, guestbook } from "@/db/schema";
 import { desc } from "drizzle-orm";
 import { cookies } from "next/headers";
 import AdminLogin from "./AdminLogin";
+import { deleteMessage, deleteGuestbookComment } from "@/app/actions";
+import { Trash2 } from "lucide-react";
 
 export default async function Admin({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +31,7 @@ export default async function Admin({ params }: { params: Promise<{ lang: string
   }
 
   const allMessages = await db.select().from(messages).orderBy(desc(messages.id));
+  const allGuestbook = await db.select().from(guestbook).orderBy(desc(guestbook.id));
 
   return (
     <PageTransition>
@@ -53,27 +56,68 @@ export default async function Admin({ params }: { params: Promise<{ lang: string
           </form>
         </div>
 
-        <div className="glass-card rounded-2xl p-6 overflow-hidden">
-          <h3 className="text-xl font-bold text-white mb-6">{dict.admin.messages} ({allMessages.length})</h3>
-          
-          <div className="space-y-4">
-            {allMessages.length === 0 && (
-              <div className="text-gray-500 text-sm text-center">Nincsenek üzenetek.</div>
-            )}
-            {allMessages.map((msg) => (
-              <div key={msg.id} className="p-4 rounded-xl bg-gray-900/50 border border-gray-800 flex flex-col md:flex-row gap-4 justify-between">
-                <div className="space-y-1 flex-1">
-                  <div className="flex items-center gap-2">
-                    <span className="font-bold text-white">{msg.name}</span>
-                    <a href={`mailto:${msg.email}`} className="text-sm text-purple-400 hover:underline">{msg.email}</a>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Üzenetek Szekció */}
+          <div className="glass-card rounded-2xl p-6 overflow-hidden">
+            <h3 className="text-xl font-bold text-white mb-6">{dict.admin.messages} ({allMessages.length})</h3>
+            
+            <div className="space-y-4">
+              {allMessages.length === 0 && (
+                <div className="text-gray-500 text-sm text-center py-4">Nincsenek üzenetek.</div>
+              )}
+              {allMessages.map((msg) => (
+                <div key={msg.id} className="p-4 rounded-xl bg-gray-900/50 border border-gray-800 flex flex-col gap-2 relative group">
+                  <div className="flex justify-between items-start gap-4">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="font-bold text-white">{msg.name}</span>
+                      <a href={`mailto:${msg.email}`} className="text-sm text-purple-400 hover:underline">{msg.email}</a>
+                    </div>
+                    
+                    <form action={deleteMessage.bind(null, msg.id)}>
+                      <button type="submit" title="Törlés" className="p-2 rounded-lg bg-red-900/20 text-red-400 hover:bg-red-900/50 hover:text-red-200 transition-colors opacity-100 lg:opacity-0 lg:group-hover:opacity-100">
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </form>
                   </div>
-                  <p className="text-gray-300 text-sm">{msg.message}</p>
+                  
+                  <p className="text-gray-300 text-sm break-words whitespace-pre-wrap">{msg.message}</p>
+                  
+                  <div className="text-xs text-gray-500 mt-2">
+                    {new Date(msg.createdAt).toLocaleString()}
+                  </div>
                 </div>
-                <div className="text-xs text-gray-500 whitespace-nowrap">
-                  {new Date(msg.createdAt).toLocaleString()}
+              ))}
+            </div>
+          </div>
+
+          {/* Vendégkönyv Szekció */}
+          <div className="glass-card rounded-2xl p-6 overflow-hidden">
+            <h3 className="text-xl font-bold text-white mb-6">Vendégkönyv ({allGuestbook.length})</h3>
+            
+            <div className="space-y-4">
+              {allGuestbook.length === 0 && (
+                <div className="text-gray-500 text-sm text-center py-4">Nincsenek bejegyzések.</div>
+              )}
+              {allGuestbook.map((entry) => (
+                <div key={entry.id} className="p-4 rounded-xl bg-gray-900/50 border border-gray-800 flex flex-col gap-2 relative group">
+                  <div className="flex justify-between items-start gap-4">
+                    <span className="font-bold text-white">{entry.name}</span>
+                    
+                    <form action={deleteGuestbookComment.bind(null, entry.id)}>
+                      <button type="submit" title="Törlés" className="p-2 rounded-lg bg-red-900/20 text-red-400 hover:bg-red-900/50 hover:text-red-200 transition-colors opacity-100 lg:opacity-0 lg:group-hover:opacity-100">
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </form>
+                  </div>
+                  
+                  <p className="text-gray-300 text-sm break-words whitespace-pre-wrap">{entry.comment}</p>
+                  
+                  <div className="text-xs text-gray-500 mt-2">
+                    {new Date(entry.createdAt).toLocaleString()}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
